@@ -39,9 +39,11 @@ st.markdown("""
 st.markdown('<p class="title">🖼️ AI Image Captioning App</p>', unsafe_allow_html=True)
 st.markdown('<p class="subtitle">Upload an image and let AI generate a smart caption for you!</p>', unsafe_allow_html=True)
 # Load API key
-with open(r"C:\Users\fayab\Desktop\AI\GENAI\API_Keys\OPENAI_API_KEY.txt") as f:
-    OPENAI_API_KEY = f.read().strip()
-os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+# with open(r"C:\Users\fayab\Desktop\AI\GENAI\API_Keys\OPENAI_API_KEY.txt") as f:
+#     OPENAI_API_KEY = f.read().strip()
+# os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+# Load OpenAI API key from Streamlit secrets
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 client = OpenAI()
 
